@@ -1,0 +1,19 @@
+{
+  "name": "troll-bot",
+  "version": "0.0.1",
+  "description": "A bot that answer group members with memes about things they says.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "troll"
+  ],
+  "author": "juliano-rb",
+  "license": "ISC",
+  "dependencies": {
+    "telebot": "^1.2.6"
+  }
+}
