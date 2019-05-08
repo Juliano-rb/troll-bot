@@ -1,19 +1,10 @@
 const TeleBot = require('telebot');
-const readlineSync = require('readline-sync');
-let credentials = {};
 
-//try require credentials file, if fails then ask for the token
-try {
-	credentials = require('./credentials.json')
-}
-catch (e) {
-	const token = readlineSync.question('Please, enter the token of your telegram bot: ');
-	credentials = {
-		"botToken" : token
-	}
-}
+const botToken = process.env.TOKEN || require('./credentials.json').botToken;
 
-const bot = new TeleBot(credentials.botToken);
+const bot = new TeleBot(
+	  token : botToken
+);
 
 bot.on(/\w*((c|C)(omunis)(mo|ta))\w*/, (msg) => {
     return msg.reply.photo('https://1.bp.blogspot.com/-MTJLF7QjvV4/WpgPiPR_WAI/AAAAAAAAOK0/_4EbKA3CeDEUooLUAYbVoBSyGT_UI8hRwCLcBGAs/s640/dac55075646e406b3d8be2c828d295b124208fa4_00.jpg', { asReply: true });

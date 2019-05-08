@@ -15,7 +15,6 @@
   "author": "juliano-rb",
   "license": "ISC",
   "dependencies": {
-    "readline-sync": "^1.4.9",
     "telebot": "^1.2.6"
   }
 }
