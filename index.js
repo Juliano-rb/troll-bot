@@ -1,5 +1,17 @@
 const TeleBot = require('telebot');
-const credentials = require('./credentials.json');
+const readlineSync = require('readline-sync');
+let credentials = {};
+
+//try require credentials file, if fails then ask for the token
+try {
+	credentials = require('./credentials.json')
+}
+catch (e) {
+	const token = readlineSync.question('Please, enter the token of your telegram bot: ');
+	credentials = {
+		"botToken" : token
+	}
+}
 
 const bot = new TeleBot(credentials.botToken);
 
