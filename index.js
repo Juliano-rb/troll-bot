@@ -2,9 +2,7 @@ const TeleBot = require('telebot');
 
 const botToken = process.env.TOKEN || require('./credentials.json').botToken;
 
-const bot = new TeleBot(
-	  token : botToken
-);
+const bot = new TeleBot(botToken);
 
 bot.on(/\w*((c|C)(omunis)(mo|ta))\w*/, (msg) => {
     return msg.reply.photo('https://1.bp.blogspot.com/-MTJLF7QjvV4/WpgPiPR_WAI/AAAAAAAAOK0/_4EbKA3CeDEUooLUAYbVoBSyGT_UI8hRwCLcBGAs/s640/dac55075646e406b3d8be2c828d295b124208fa4_00.jpg', { asReply: true });
